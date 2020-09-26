@@ -13,27 +13,29 @@
     <link rel="manifest" href="/site.webmanifest">
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" type="text/css" href ="/assets/calculatorstyle.css">
+
 </head>
 <title>
 broop's Calculator
 </title>
 
 <body>
-<!-- Calculator Screen Display is a disabled text input box -->
-<input type="text" class="calcScreen" value="" disabled />
 
-<div class="calculatorContainer">
+<div class="wrapper">
+<!-- Calculator Display is a disabled text input box -->
+<input type="text" class="calculatorDisplay" value="" disabled></input>
+
 <div class = "calculatorButtons">
     <div class="buttons">
         <!-- NUMBERS -->
         <button type="button" value="0">0</button>
-        <button type = "button" value="1">1</button>
-        <button type = "button" value="2">2</button>
-        <button type = "button" value="3">3</button>
-        <button type = "button" value="4">4</button>
-        <button type = "button" value="5">5</button>
-        <button type = "button" value="6">6</button>
-        <button type = "button" value="7">7</button>
+        <button type="button" value="1">1</button>
+        <button type="button" value="2">2</button>
+        <button type="button" value="3">3</button>
+        <button type="button" value="4">4</button>
+        <button type="button" value="5">5</button>
+        <button type="button" value="6">6</button>
+        <button type="button" value="7">7</button>
         <button type="button" value="8">8</button>
         <button type="button" value="9">9</button>
 
@@ -43,8 +45,12 @@ broop's Calculator
         <button type="button" class="operator" value="*">&times;</button>
         <button type="button" class="operator" value="/">&divide;</button>
         <button type="button" class="operator" value="x^2">x<sup>^2</sup></button>
-        <button type="button" class="operator" value="C">C</button>
-        <button type="button" class="operator" value="back">CE</button>
+        
+        <!-- FUNCTION BUTTONS-->
+        <button type="button" class="allClear" value="C">C</button>
+        <button type="button" class="clear" value="CE">CE</button>
+        <button type="button" class="equals" value="=">=</button>
+        <button type="button" class="decimal" value=".">.</button>
     </div>
 </div>
 

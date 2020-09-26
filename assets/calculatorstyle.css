@@ -1,0 +1,15 @@
+/* calculatorstyle.css */
+
+.wrapper {
+    display: null;
+}
+
+.calculatorDisplay {
+    display: box;
+    color: black;
+    background-color: white;
+}
+
+.calculatorButtons {
+    display: null;
+}

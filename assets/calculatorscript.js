@@ -1,6 +1,6 @@
 //calculatorscript.js
 
-// set calculator screen display
+// calculator screen
 const calcDisplay = {
 	displayValue: '0',
 	firstOperand: null,
@@ -8,16 +8,16 @@ const calcDisplay = {
 	operator: null,
 }
 
-//update calculator screen display
 function updateDisplay() {
 	const display = document.querySelector('.calculatorDisplay');
-	// update value of screen element with content of `displayValue`
+	// update value of screen element with the contents of `displayValue`
 	display.value = calcDisplay.displayValue;
 }
 
 updateDisplay();
 
 // MATH FUNCTIONS
+
 function add () {
 	
 }
