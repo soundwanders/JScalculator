@@ -1,4 +1,6 @@
-//CALCULATOR SCRIPT broop
+//calculatorscript.js
+
+// MATH FUNCTIONS
 
 function add () {
 	
