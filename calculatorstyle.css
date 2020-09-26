@@ -1,3 +1,13 @@
-.calculator {
-    display: box;
+/* calculatorstyle.css */
+
+.calculatorContainer {
+    display: null;
+}
+
+.calcScreen {
+    display: null;
+}
+
+.calculatorButtons {
+    display: null;
 }

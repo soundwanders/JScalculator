@@ -1,25 +1,55 @@
 <!DOCTYPE html>
 
-<div class = "calculator" id = "calc">
+<head>
+    <meta charset="UTF-8">
+    <meta name="title" content="broop's Javascript Calculator">
+    <meta name="description" content="calculator">
+    <meta name="viewport" content="width=device.width, initial.scale=1.0">
+    <!-- Ludwig Von Koopa Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" href ="/assets/calculatorstyle.css">
+</head>
+<title>
+broop's Calculator
+</title>
+
+<body>
+<!-- Calculator Screen Display is a disabled text input box -->
+<input type="text" class="calcScreen" value="" disabled />
+
+<div class="calculatorContainer">
+<div class = "calculatorButtons">
     <div class="buttons">
-        <button id = "zero">0</button>
-        <button id = "one">1</button>
-        <button id = "two">2</button>
-        <button id = "three">3</button>
-        <button id = "four">4</button>
-        <button id = "five">5</button>
-        <button id = "six">6</button>
-        <button id = "seven">7</button>
-        <button id = "eight">8</button>
-        <button id = "nine">9</button>
-        <button id = "plus">+</button>
-        <button id = "minus">-</button>
-        <button id = "multiply">*</button>
-        <button id = "divide">/</button>
-        <button id = "clear">C</button>
-        <button id = "back">CE</button>
+        <!-- NUMBERS -->
+        <button type="button" value="0">0</button>
+        <button type = "button" value="1">1</button>
+        <button type = "button" value="2">2</button>
+        <button type = "button" value="3">3</button>
+        <button type = "button" value="4">4</button>
+        <button type = "button" value="5">5</button>
+        <button type = "button" value="6">6</button>
+        <button type = "button" value="7">7</button>
+        <button type="button" value="8">8</button>
+        <button type="button" value="9">9</button>
+
+        <!-- OPERATORS -->
+        <button type="button" class="operator" value="+">+</button>
+        <button type="button" class="operator" value="-">-</button>
+        <button type="button" class="operator" value="*">&times;</button>
+        <button type="button" class="operator" value="/">&divide;</button>
+        <button type="button" class="operator" value="x^2">x<sup>^2</sup></button>
+        <button type="button" class="operator" value="C">C</button>
+        <button type="button" class="operator" value="back">CE</button>
     </div>
 </div>
 
+</body>
+
+<script src = "assets/calculatorscript.js"></script>
 
 </html>
