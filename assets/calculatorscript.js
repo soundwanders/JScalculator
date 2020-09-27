@@ -43,7 +43,7 @@ buttons.addEventListener('click', (e) => {
   }
 
   if (target.classList.contains('decimal')) {
-    inputDecimal(target.value);
+    decimal(target.value);
     updateDisplay();
     return;
   }
@@ -83,7 +83,7 @@ function multiply() {
 }
 
 //pressing decimal button will add decimal point to display, unless one is already there
-function inputDecimal(point) {
+function decimal(point) {
   if (!calcDisplay.displayValue.includes(point)) {
       calcDisplay.displayValue += point;
     }
