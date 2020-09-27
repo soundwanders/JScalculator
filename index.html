@@ -24,35 +24,39 @@ broop's Calculator
 <input type="text" class="calculatorDisplay" value="" disabled></input>
 
     <div class = "calculatorButtons">
-        <!-- NUMBERS -->
-        <button type="button" value="0">0</button>
-        <button type="button" value="1">1</button>
-        <button type="button" value="2">2</button>
-        <button type="button" value="3">3</button>
-        <button type="button" value="4">4</button>
-        <button type="button" value="5">5</button>
-        <button type="button" value="6">6</button>
-        <button type="button" value="7">7</button>
-        <button type="button" value="8">8</button>
-        <button type="button" value="9">9</button>
-
         <!-- OPERATORS -->
         <button type="button" class="operator" value="+">+</button>
         <button type="button" class="operator" value="-">-</button>
         <button type="button" class="operator" value="*">&times;</button>
         <button type="button" class="operator" value="/">&divide;</button>
-        <button type="button" class="operator" value="x^2">x<sup>^2</sup></button>
-        <button type="button" class="operator" value="sqrt">√</button>
-        <button type="button" class="equal-sign operator" value="=">=</button>
         
-        <!-- FUNCTION BUTTONS-->
+        <!-- NUMBERS -->
+        <!-- Row 1 , Digits and Squared -->
+        <button type="button" value="7">7</button>
+        <button type="button" value="8">8</button>
+        <button type="button" value="9">9</button>
+        <button type="button" class="operator" value="x2">x<sup>2</sup></button>
+
+        <!-- Row 2 , Digits and SqRt -->
+        <button type="button" value="4">4</button>
+        <button type="button" value="5">5</button>
+        <button type="button" value="6">6</button>
+        <button type="button" class="sqrt operator" value="sqrt">&radic;</button>
+
+        <!-- Row 3 , Digits and Equal Sign -->
+        <button type="button" value="1">1</button>
+        <button type="button" value="2">2</button>
+        <button type="button" value="3">3</button>
+        <button type="button" class="equal-sign operator" value="=">=</button>
+
+        <!-- Row 4 , Calculator Functions-->
+        <button type="button" value="0">0</button>
         <button type="button" class="decimal" value=".">.</button>
-        <button type="button" class="allClear" value="C">C</button>
-        <button type="button" class="clear" value="CE">CE</button>
+        <button type="button" class="allClear" value="AC">AC</button>
     </div>
 </div>
-</body>
 
 <script src = "assets/calculatorscript.js"></script>
+</body>
 
 </html>
