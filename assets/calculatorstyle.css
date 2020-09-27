@@ -5,9 +5,7 @@
 }
 
 .calculatorDisplay {
-    display: box;
     color: black;
-    background-color: white;
 }
 
 .calculatorButtons {
