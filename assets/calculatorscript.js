@@ -10,14 +10,14 @@ const calcDisplay = {
 
 //---Pressing number buttons will input them to calculator display
 function inputDigit(digit) {
-  const { displayValue, waitForSecondOperand } = calcDisplay;
+  const {displayValue, waitForSecondOperand} = calcDisplay;
   
   // Overwrite `displayValue` if the current value is '0' otherwise append
   if (waitForSecondOperand === true) {
     calcDisplay.displayValue = digit;
     calcDisplay.waitForSecondOperand = false;
   } else {
-	calcDisplay.displayValue = displayValue === '0' ? digit: displayValue + digit;
+	  calcDisplay.displayValue = displayValue === '0' ? digit: displayValue + digit;
   }
   console.log(calcDisplay);
 };
@@ -25,8 +25,8 @@ function inputDigit(digit) {
 //---Handling Math Operators
 
 function handleOperator(nextOperator) {
-  const { firstOperand, displayValue, operator } = calcDisplay;
-  // `parseFloat` converts string `displayValue` to a floating-point number
+  const {firstOperand, displayValue, operator} = calcDisplay;
+  // parseFloat converts string displayValue to a floating-point number
   const inputValue = parseFloat(displayValue);
 
   if (operator && calcDisplay.waitForSecondOperand)  {
@@ -37,16 +37,13 @@ function handleOperator(nextOperator) {
 
   // check if `firstOperand` is null and if 'inputValue = NaN' is false
   // if the statement checks pass, then update the firstOperand property
-  if (firstOperand === null && !isNaN(inputValue)) {
+  if (firstOperand == null && !isNaN(inputValue)) {
     calcDisplay.firstOperand = inputValue;
-    calcDisplay.operator = nextOperator;
-    console.log(calcDisplay);
-    return;
 
-    // if operator property is assigned to an Operator, then solve
-      // and change 'result' variable to the calculation's result
+    // if operator property is assigned to an Operator, then solve and show 'result'
   } else if (operator) {
     const result = solve(firstOperand, inputValue, operator);
+    //set calculator display to show up to 4 decimal places on solve
     calcDisplay.displayValue = calcDisplay.displayValue = `${parseFloat(result.toFixed(4))}`;
     calcDisplay.firstOperand = result;
   }
@@ -119,38 +116,38 @@ function allClear() {
   // ** Event Listener function could also be Refactored to use a Switch statement, benefit being 
     // shorter form and only have to run updateDisplay() once at the end of the Switch function
 
-    const buttons = document.querySelector('.calculatorButtons');
-    buttons.addEventListener('click', (event) => {
-      // 'const target = e.target' and 'const {target} = event' are the same thing
-      const { target } = event;
-      if (!target.matches('button')) {
-        return;
-      }
-    
-      if (target.classList.contains('operator')) {
-        handleOperator(target.value);
-        updateDisplay();
-        return;
-      }
-    
-      if (target.classList.contains('decimal')) {
-        decimal(target.value);
-        updateDisplay();
-        return;
-      }
-    
-      if (target.classList.contains('allClear')) {
-        allClear();
-        updateDisplay();
-        return;
-      }
-    
-      if (target.classList.contains('clear')) {
-        clear(target.value);
-        updateDisplay();
-        return;
-      }
-      
-      inputDigit(target.value);
-      updateDisplay();
-    });
+const buttons = document.querySelector('.calculatorButtons');
+buttons.addEventListener('click', (event) => {
+  // 'const target = e.target' and 'const {target} = event' are the same thing
+  const {target} = event;
+  if (!target.matches('button')) {
+    return;
+  }
+
+  if (target.classList.contains('operator')) {
+    handleOperator(target.value);
+    updateDisplay();
+    return;
+  }
+
+  if (target.classList.contains('decimal')) {
+    decimal(target.value);
+    updateDisplay();
+    return;
+  }
+
+  if (target.classList.contains('allClear')) {
+    allClear();
+    updateDisplay();
+    return;
+  }
+
+  if (target.classList.contains('clear')) {
+    clear(target.value);
+    updateDisplay();
+    return;
+  }
+  
+  inputDigit(target.value);
+  updateDisplay();
+});
