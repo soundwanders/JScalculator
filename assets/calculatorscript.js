@@ -43,8 +43,8 @@ function handleOperator(nextOperator) {
     // if operator property is assigned to an Operator, then solve and show 'result'
   } else if (operator) {
     const result = solve(firstOperand, inputValue, operator);
-    //set calculator display to show up to 4 decimal places on solve
-    calcDisplay.displayValue = calcDisplay.displayValue = `${parseFloat(result.toFixed(4))}`;
+    //set calculator display to show up to 5 decimal places on solve
+    calcDisplay.displayValue = calcDisplay.displayValue = `${parseFloat(result.toFixed(5))}`;
     calcDisplay.firstOperand = result;
   }
 
@@ -70,9 +70,8 @@ function solve(firstOperand, secondOperand, operator) {
   } else if (operator === 'sqrt') {
     return Math.sqrt(firstOperand, secondOperand);
 
-  } else if (operator === 'x2') {
-      calcDisplay.waitForSecondOperand = false;
-      return firstOperand * firstOperand;
+  } else if (operator === 'xy') {
+      return Math.pow(firstOperand, secondOperand);
     }
 
   return secondOperand;
