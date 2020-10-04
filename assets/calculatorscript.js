@@ -6,7 +6,7 @@ const calcDisplay = {
 	firstOperand: null,
 	waitForSecondOperand: 'false',
 	operator: null,
-}
+};
 
 //---Pressing number buttons will input them to calculator display
 function inputDigit(digit) {
@@ -29,7 +29,7 @@ function handleOperator(nextOperator) {
   // parseFloat converts string displayValue to a floating-point number
   const inputValue = parseFloat(displayValue);
 
-  if (operator && calcDisplay.waitForSecondOperand)  {
+  if (operator && calcDisplay.waitForSecondOperand) {
     calcDisplay.operator = nextOperator;
     console.log(calcDisplay);
     return;
@@ -51,13 +51,13 @@ function handleOperator(nextOperator) {
     // if waitForSecondOperand is true, displayValue is overwritten with selected digit
     calcDisplay.waitForSecondOperand = true;
     calcDisplay.operator = nextOperator;
-    console.log(calcDisplay);
 };
 
 //--- Solve Using Math, Return Solution
 function solve(firstOperand, secondOperand, operator) {
   if (operator === '+') {
     return firstOperand + secondOperand;
+
   } else if (operator === '-') {
     return firstOperand - secondOperand;
 
@@ -72,19 +72,10 @@ function solve(firstOperand, secondOperand, operator) {
 
   } else if (operator === 'xy') {
       return Math.pow(firstOperand, secondOperand);
-    }
+  }
 
   return secondOperand;
 };
-
-
-//---Update calculator screen display with the value of const 'display'
-function updateDisplay() {
-	const display = document.querySelector('.calculatorDisplay');
-	// update value of screen element with content of `displayValue`
-	display.value = calcDisplay.displayValue;
-}
-updateDisplay();
 
 //---Clicking decimal button will input decimal point to display,
   // unless calcDisplay already includes a decimal
@@ -105,19 +96,23 @@ function allClear() {
   calcDisplay.firstOperand= null;
   calcDisplay.waitForSecondOperand = false;
   calcDisplay.operator = null;
-  console.log(calcDisplay);
   console.log("All Cleared");
 };
 
-//---Check target on button press checks
-	// adding if statement..checks if user has clicked a button element
-  // if 'target' matches 'button' is false, return
-  // ** Event Listener function could also be Refactored to use a Switch statement, benefit being 
-    // shorter form and only have to run updateDisplay() once at the end of the Switch function
+//---Update calculator screen display with the value of const 'display'
+function updateDisplay() {
+	const display = document.querySelector('.calculatorDisplay');
+	// update value of screen element with content of `displayValue`
+	display.value = calcDisplay.displayValue;
+}
+
+updateDisplay();
+
+
+//---ADD EVENT LISTENER TO BUTTONS
 
 const buttons = document.querySelector('.calculatorButtons');
 buttons.addEventListener('click', (event) => {
-  // 'const target = e.target' and 'const {target} = event' are the same thing
   const {target} = event;
   if (!target.matches('button')) {
     return;
@@ -139,13 +134,7 @@ buttons.addEventListener('click', (event) => {
     allClear();
     updateDisplay();
     return;
-  }
-
-  if (target.classList.contains('clear')) {
-    clear(target.value);
-    updateDisplay();
-    return;
-  }
+  } 
   
   inputDigit(target.value);
   updateDisplay();
