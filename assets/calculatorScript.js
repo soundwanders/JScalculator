@@ -20,7 +20,7 @@ function inputDigit (digit) {
 	  calcDisplay.displayValue = displayValue === '0' ? digit : displayValue + digit;
   }
   console.log(calcDisplay);
-}
+};
 
 // ---Handling Math Operators
 
@@ -51,7 +51,7 @@ function handleOperator (nextOperator) {
   // if waitForSecondOperand is true, displayValue is overwritten with selected digit
   calcDisplay.waitForSecondOperand = true;
   calcDisplay.operator = nextOperator;
-}
+};
 
 // --- Solve Using Math, Return Solution
 function solve (firstOperand, secondOperand, operator) {
@@ -70,7 +70,7 @@ function solve (firstOperand, secondOperand, operator) {
   }
 
   return secondOperand;
-}
+};
 
 // ---Clicking decimal button will input decimal point to display,
 // unless calcDisplay already includes a decimal
@@ -83,7 +83,7 @@ function decimal (point) {
   if (!calcDisplay.displayValue.includes(point)) {
     calcDisplay.displayValue += point;
   }
-}
+};
 
 // ---Clear All by changing input's inner text to blank and resetting default value to 0
 function allClear () {
@@ -92,14 +92,14 @@ function allClear () {
   calcDisplay.waitForSecondOperand = false;
   calcDisplay.operator = null;
   console.log('All Cleared');
-}
+};
 
 // ---Update calculator screen display with the value of const 'display'
 function updateDisplay () {
   const display = document.querySelector('.calculatorDisplay');
   // update value of screen element with content of `displayValue`
   display.value = calcDisplay.displayValue;
-}
+};
 
 updateDisplay();
 
