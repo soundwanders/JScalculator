@@ -1,6 +1,6 @@
 // calculatorscript.js
 
-// ---Create initial calculator display
+// Create initial calculator display
 const calcDisplay = {
   displayValue: '0',
   firstOperand: null,
@@ -8,7 +8,7 @@ const calcDisplay = {
   operator: null
 };
 
-// ---Pressing number buttons will input them to calculator display
+// Pressing number buttons will input them to calculator display
 function inputDigit (digit) {
   const { displayValue, waitForSecondOperand } = calcDisplay;
 
@@ -22,7 +22,7 @@ function inputDigit (digit) {
   console.log(calcDisplay);
 };
 
-// ---Handling Math Operators
+// Handling Math Operators
 
 function handleOperator (nextOperator) {
   const { firstOperand, displayValue, operator } = calcDisplay;
@@ -53,7 +53,7 @@ function handleOperator (nextOperator) {
   calcDisplay.operator = nextOperator;
 };
 
-// --- Solve Using Math, Return Solution
+// give calculator the ability to solve using built in object 'Math'
 function solve (firstOperand, secondOperand, operator) {
   if (operator === '+') {
     return firstOperand + secondOperand;
@@ -72,8 +72,8 @@ function solve (firstOperand, secondOperand, operator) {
   return secondOperand;
 };
 
-// ---Clicking decimal button will input decimal point to display,
-// unless calcDisplay already includes a decimal
+// Clicking decimal button will input decimal point to display,
+// if the calculator display already includes a decimal, then exit function
 function decimal (point) {
   if (calcDisplay.waitForSecondOperand === true) {
     calcDisplay.displayValue = '0.';
@@ -85,7 +85,7 @@ function decimal (point) {
   }
 };
 
-// ---Clear All by changing input's inner text to blank and resetting default value to 0
+// Clear All by changing input's inner text to blank and resetting default value to 0
 function allClear () {
   calcDisplay.displayValue = '0';
   calcDisplay.firstOperand = null;
@@ -94,7 +94,7 @@ function allClear () {
   console.log('All Cleared');
 };
 
-// ---Update calculator screen display with the value of const 'display'
+// Update calculator screen display with the value of const 'display'
 function updateDisplay () {
   const display = document.querySelector('.calculatorDisplay');
   // update value of screen element with content of `displayValue`
